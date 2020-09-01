@@ -6,9 +6,9 @@ if (number >= 0):
 else:
     ldigit = (abs(number) % 10) * -1
 if (ldigit > 5):
-    string = "and is greater than 5"
+    end = "and is greater than 5"
 elif (ldigit == 0):
-    string = "and is 0"
+    end = "and is 0"
 else:
-    string = "and is less than 6 and not 0"
-print("Last digit of", "{:d}".format(number), "is {:d}".format(ldigit), string)
+    end = "and is less than 6 and not 0"
+print("Last digit of", "{:d}".format(number), "is {:d}".format(ldigit), end)
