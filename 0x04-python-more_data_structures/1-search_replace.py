@@ -4,5 +4,5 @@ def search_replace(my_list, search, replace):
         return (my_list)
     else:
         new_list = my_list.copy()
-        new_list[search] = replace
+        new_list[search - 1] = replace
         return (new_list)
