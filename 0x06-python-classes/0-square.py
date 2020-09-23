@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Class Square: Defines a square"""
+"""Example Empty Class Square"""
 
 
 class Square:
-    # An empty block
+    # Pass is necesary, because i need a one line into class
     pass
