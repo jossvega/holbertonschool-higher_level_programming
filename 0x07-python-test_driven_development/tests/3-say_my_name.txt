@@ -17,13 +17,13 @@ Now test it:
     >> say_my_name("Jocelyn")
     My name is Jocelyn
 
-     >>> say_my_name(hola, 2)
-     Traceback (most recent call last):
-     NameError: name 'hola' is not defined
+    >>> say_my_name(hola, 2)
+    Traceback (most recent call last):
+    NameError: name 'hola' is not defined
 
-     say_my_name("Gomora", 56)
-     Traceback (most recent call last):
-     TypeError: last_name must be a string
+    >>> say_my_name("Gomora", 56)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
 
     >>> say_my_name()
     Traceback (most recent call last):
