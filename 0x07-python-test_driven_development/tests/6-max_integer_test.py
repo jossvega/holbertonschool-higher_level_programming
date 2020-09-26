@@ -49,3 +49,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_str_param(self):
         self.assertAlmostEqual(max_integer("Yehaa"), "h")
+
+
+if __name__ == '__main__':
+    unittest.main()
