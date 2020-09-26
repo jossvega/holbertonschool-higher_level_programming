@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Return a new matrix Divided by div value
+Write a function that prints My name is <first name> <last name>
 """
 
 
