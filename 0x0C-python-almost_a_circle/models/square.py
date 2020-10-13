@@ -38,17 +38,15 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Method that assigns an argument to each attribute"""
         listAttri = ["id", "width", "height", "x", "y"]
-        if(args and len(args) != 0):
-            for argItem in range(len(args)):
-                if (argItem == 0):
-                    super().update(args[argItem])
-                elif (argItem < len(listAttri)):
-                    setattr(self, listAttri[argItem], args[argItem])
-        else:
-            for key, value in kwargs.items():
-                if (key == "id"):
-                    super().update(value)
+        if (args is not None and len(args) != 0):
+            for x in range(len(args)):
+                if (x >= len(listAttri)):
+                    break
                 else:
+                    setattr(self, listAttri[x], args[x])
+        elif (kwargs is not None):
+            for key, value in kwargs.items():
+                if (key in listAttri):
                     setattr(self, key, value)
 
     def to_dictionary(self):
@@ -56,7 +54,6 @@ class Square(Rectangle):
         my_dict = {
             "id": self.id,
             "width": self.width,
-            "height": self.height,
             "x": self.x,
             "y": self.y
         }
