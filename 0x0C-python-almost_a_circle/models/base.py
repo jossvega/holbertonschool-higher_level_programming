@@ -61,11 +61,10 @@ class Base:
     def load_from_file(cls):
         """Returns a list of instances"""
         my_list = []
-        fname = cls.__name__ + ".json"
-        if os.path.isfile(fname):
-            with open(fname, "r") as f:
-                stread = f.read()
-                listjson = cls.from_json_string(stread)
-                for a in listjson:
-                    my_list.append(cls.create(**a))
-        return (my_list)
+        fname = str(cls.__name__) + ".json"
+        try:
+            with open(fname, "r") as jsonfile:
+                listJson = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in listJson]
+        except IOError:
+            return []

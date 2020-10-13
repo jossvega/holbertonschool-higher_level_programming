@@ -37,7 +37,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Method that assigns an argument to each attribute"""
-        listAttri = ["id", "width", "height", "x", "y"]
+        listAttri = ["id", "size", "x", "y"]
         if (args is not None and len(args) != 0):
             for x in range(len(args)):
                 if (x >= len(listAttri)):
@@ -53,7 +53,7 @@ class Square(Rectangle):
         """Returns the dictionary representation of a Rectangle"""
         my_dict = {
             "id": self.id,
-            "width": self.width,
+            "size": self.size,
             "x": self.x,
             "y": self.y
         }
