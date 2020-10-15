@@ -76,19 +76,20 @@ class Base:
         if list_objs is None or list_objs == []:
             my_list = "[]"
         else:
-            my_list = cls.to_json_string([o.to_dictionary() for o in list_objs])
+            my_list = cls.to_json_string(
+                [o.to_dictionary() for o in list_objs])
         new_file = cls.__name__ + ".csv"
-        with open(new_file, 'w') as f:
+        with open(new_file, "w") as f:
             f.write(my_list)
 
     @classmethod
     def load_from_file_csv(cls):
         """ deserializes csv of the list of instances """
-        fname = cls.__name__ + '.csv'
+        fname = cls.__name__ + ".csv"
         if not os.path.exists(fname):
             return []
         list_dict = []
-        with open(fname, 'r') as f:
+        with open(fname, "r") as f:
             str1 = f.read()
             list_dict = cls.from_json_string(str1)
         return [cls.create(**d) for d in list_dict]
