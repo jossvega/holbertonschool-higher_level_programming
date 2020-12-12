@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 # List state database hbtn_0e_0_usa
 # Sintax: ./0-select_states.py username password database_name
-from sys import argv
-import MySQLdb
 
 if __name__ == "__main__":
-    if len(argv) != 4:
+
+    from sys import argv
+    import MySQLdb
+
+   if len(argv) != 4:
         exit()
 
     conn = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],

@@ -2,10 +2,11 @@
 # script that lists all states with a name starting with N (upper N)
 # from the database hbtn_0e_0_usa
 
-import sys
-import MySQLdb
-
 if __name__ == "__main__":
+
+    import sys
+    import MySQLdb
+    
     if len(argv) != 4:
         exit()
     conn = MySQLdb.connect(host="192.168.1.55",
