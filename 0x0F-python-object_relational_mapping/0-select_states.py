@@ -8,7 +8,7 @@ if __name__ == "__main__":
     if len(argv) != 4:
         exit()
 
-    conn = MySQLdb.connect(user=argv[1], passwd=argv[2],
+    conn = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],
                            db=argv[3], port=3306)
     cur = conn.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
@@ -16,6 +16,7 @@ if __name__ == "__main__":
 
     for row in query_rows:
         print(row)
-
+    # Close all cursors
     cur.close()
+    # Close all cursors
     conn.close()
