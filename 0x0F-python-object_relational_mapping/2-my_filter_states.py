@@ -7,7 +7,8 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(host="192.168.1.55", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    conn = MySQLdb.connect(host="192.168.1.55", user=sys.argv[1], passwd=sys.argv[2],
+                           db=sys.argv[3])
     cur = conn.cursor()
     cur.execute("SELECT * FROM states \
                WHERE name = '{}'".format(sys.argv[4]))
