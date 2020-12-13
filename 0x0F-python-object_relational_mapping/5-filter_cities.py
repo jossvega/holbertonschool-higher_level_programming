@@ -13,15 +13,17 @@ if __name__ == "__main__":
                            db=argv[3])
     cur = conn.cursor()
     """, to the end of argv[4] because second paramether is a tuple"""
-    cur.execute("SELECT c.name \
-                 FROM cities as c \
-                 INNER JOIN states as s \
-                 ON c.state_id = s.id \
-                 WHERE s.name = %s \
-                 COLLATE latin1_general_cs \
-                 ORDER BY c.id ASC", (argv[4],))
+    cur.execute("""SELECT cities.name
+                FROM cities INNER JOIN states
+                ON states.id = cities.state_id
+                WHERE states.name= %s
+                ORDER BY cities.id ASC""",
+                (argv[4],))
     query_rows = cur.fetchall()
-    print(", ".join(row[0] for row in query_rows))
+    array_1 = []
+    for row in query_rows:
+        array_1.append(row[0])
+    print(', '.join(array_1))
     """Close all cursors"""
     cur.close()
     """Close all databases"""
