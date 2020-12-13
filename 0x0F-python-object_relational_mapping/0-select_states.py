@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-# List state database hbtn_0e_0_usa
-# Sintax: ./0-select_states.py username password database_name
+"""List state database hbtn_0e_0_usa"""
 
 if __name__ == "__main__":
 
-    from sys import argv
     import MySQLdb
-
-    if len(argv) != 4:
-        exit()
+    from sys import argv
 
     conn = MySQLdb.connect(user=argv[1], passwd=argv[2],
                            db=argv[3])
@@ -18,7 +14,7 @@ if __name__ == "__main__":
 
     for row in query_rows:
         print(row)
-    # Close all cursors
+    """Close all cursors"""
     cur.close()
-    # Close all cursors
+    """Close all cursors"""
     conn.close()
