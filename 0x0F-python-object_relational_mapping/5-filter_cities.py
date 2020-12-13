@@ -9,7 +9,6 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
-    aux_list = []
     conn = MySQLdb.connect(host="192.168.1.55", user=argv[1], passwd=argv[2],
                            db=argv[3])
     cur = conn.cursor()
@@ -22,10 +21,7 @@ if __name__ == "__main__":
                  COLLATE latin1_general_cs \
                  ORDER BY c.id ASC", (argv[4],))
     query_rows = cur.fetchall()
-
-    for row in query_rows:
-        aux_list.append(row[0])
-    print(", ".join(aux_list))
+    print(", ".join(row[0] for row in query_rows))
     """Close all cursors"""
     cur.close()
     """Close all databases"""
