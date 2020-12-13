@@ -6,11 +6,11 @@
 if __name__ == "__main__":
 
     import MySQLdb
-    from sys import argv
+    import sys
 
     conn = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                            db=sys.argv[3])
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states \
-               WHERE name = '{}'".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name='{}'\
+                 ORDER BY id".format(sys.argv[4]))
     [print(state) for state in cur.fetchall()]
