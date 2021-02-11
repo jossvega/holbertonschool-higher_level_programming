@@ -4,6 +4,7 @@ script that updates the text of the HTML tag HEADER to
 You can’t use document.querySelector to select the HTML tag
 */
 
+const $ = window.$;
 $(function () {
   $('div#update_header').click(function () {
     $('header').text('New Header!!!');

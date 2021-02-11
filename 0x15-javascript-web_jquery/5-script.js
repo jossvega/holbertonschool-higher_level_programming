@@ -3,6 +3,7 @@ when the user clicks on the tag DIV#add_item:
 You can’t use document.querySelector to select the HTML tag
 */
 
+const $ = window.$;
 $(document).ready(function () {
   $('div#add_item').click(function () {
     const item1 = $('<li></li>').text('Item');

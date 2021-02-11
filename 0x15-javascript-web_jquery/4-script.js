@@ -4,6 +4,7 @@ the tag DIV#toggle_header:
 You can’t use document.querySelector
 */
 
+const $ = window.$;
 $(document).ready(function () {
   $('div#toggle_header').click(function () {
     if ($('header').hasClass('green')) {
